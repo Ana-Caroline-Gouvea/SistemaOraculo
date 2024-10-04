@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Oráculo.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Contexto>
+    (options => options.UseSqlServer("Data Source=SB-1490638\\SQLSENAI;Initial Catalog = Oráculo;Integrated Security = True;TrustServerCertificate = True"));
 
 var app = builder.Build();
 
