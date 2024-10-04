@@ -1,4 +1,4 @@
-namespace Oráculo.Models
+namespace Oraculo.Models
 {
     public class ErrorViewModel
     {

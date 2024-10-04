@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Oráculo.Models;
+using Oraculo.Models;
 using System.Diagnostics;
 
-namespace Oráculo.Controllers
+namespace Oraculo.Controllers
 {
     public class HomeController : Controller
     {

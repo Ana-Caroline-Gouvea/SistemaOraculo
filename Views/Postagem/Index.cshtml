@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Oraculo.Models.Postagem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ComunidadeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categorias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Like)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compartilhamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComunidadeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorias.CategoriaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Like)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Compartilhamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PostagemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PostagemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PostagemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

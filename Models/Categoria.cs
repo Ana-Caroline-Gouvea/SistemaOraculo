@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Oráculo.Models
+namespace Oraculo.Models
 {
-    [Table("Categorias")]
-    public class Categorias
+    [Table("Categoria")]
+    public class Categoria
     {
         [Column("CategoriaId")]
         [Display(Name = "Id")]
@@ -13,9 +13,6 @@ namespace Oráculo.Models
         [Column("CategoriaNome")]
         [Display(Name = "Categoria Nome ")]
         public string CategoriaNome { get; set; } = string.Empty;
-
-
-
 
     }
 }

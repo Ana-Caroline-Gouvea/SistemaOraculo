@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Oráculo.Models
+namespace Oraculo.Models
 {
     public class Contexto : DbContext
     {
@@ -8,7 +8,7 @@ namespace Oráculo.Models
         {
 
         }
-        public DbSet<Categorias> Categorias { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Chat> Chat { get; set; }
         public DbSet<Comunidades> Comunidades { get; set; }
         public DbSet<Evento> Evento { get; set; }

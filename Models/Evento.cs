@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Oráculo.Models
+namespace Oraculo.Models
 {
     [Table("Evento")]
     public class Evento

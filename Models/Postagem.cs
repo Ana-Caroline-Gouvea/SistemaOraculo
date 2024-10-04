@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Oráculo.Models
+namespace Oraculo.Models
 
 {
     [Table("Postagem")]
@@ -17,7 +17,7 @@ namespace Oráculo.Models
 
         [ForeignKey("CategoriaId")]
         public int CategoriaId { get; set; }
-        public Categorias? Categorias { get; set; }
+        public Categoria? Categorias { get; set; }
 
         [Column("Like")]
         [Display(Name = "Like")]
