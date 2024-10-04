@@ -14,18 +14,18 @@ namespace Oráculo.Models
         [Display(Name = "Mensagem")]
         public string Mensagem { get; set; } = string.Empty;
 
+
         [ForeignKey("UsuarioId")]
         public int UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
 
         [ForeignKey("CategoriaId")]
         public int CategoriaId { get; set; }
-        [Display(Name = "Usuário")]
         public Categorias? Categorias { get; set; }
 
         [Column("Data")]
         [Display(Name = "Data")]
-        public DateOnly Data { get; set; }
+        public DateTime Data { get; set; }
 
 
     }

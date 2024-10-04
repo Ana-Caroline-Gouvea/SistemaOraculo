@@ -8,10 +8,10 @@ namespace Oráculo.Models
     {
         [Column("CategoriaId")]
         [Display(Name = "Id")]
-        public int CategoriasId { get; set; }
+        public int CategoriaId { get; set; }
 
-        [Column("CategoriasNomes")]
+        [Column("CategoriaNome")]
         [Display(Name = "Categoria Nome ")]
-        public string DadosInfluencerSeguidores { get; set; } = string.Empty;
+        public string CategoriaNome { get; set; } = string.Empty;
     }
 }
