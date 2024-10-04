@@ -13,5 +13,9 @@ namespace Oráculo.Models
         [Column("CategoriaNome")]
         [Display(Name = "Categoria Nome ")]
         public string CategoriaNome { get; set; } = string.Empty;
+
+
+
+
     }
 }
