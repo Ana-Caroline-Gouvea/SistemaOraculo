@@ -33,4 +33,5 @@ namespace Oráculo.Models
         [Display(Name = "Confirmar senha")]
         public string UsuarioConfirmarSenha { get; set; } = string.Empty;
     }
+
 }
