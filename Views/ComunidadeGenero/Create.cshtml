@@ -1,26 +1,24 @@
-﻿@model Oraculo.Models.Evento
+﻿@model Oraculo.Models.ComunidadeGenero
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Criar Evento</h1>
+<h1>Criar Comunidade Gênero</h1>
 
-<h4>Evento</h4>
+<h4>Comunidade Gênero</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EventoFoto" class="control-label"></label>
-                <input asp-for="EventoFoto" class="form-control" />
-                <span asp-validation-for="EventoFoto" class="text-danger"></span>
+                <label asp-for="ComunidadesId" class="control-label"></label>
+                <select asp-for="ComunidadesId" class ="form-control" asp-items="ViewBag.ComunidadesId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="EventoTexto" class="control-label"></label>
-                <input asp-for="EventoTexto" class="form-control" />
-                <span asp-validation-for="EventoTexto" class="text-danger"></span>
+                <label asp-for="GeneroId" class="control-label"></label>
+                <select asp-for="GeneroId" class ="form-control" asp-items="ViewBag.GeneroId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
@@ -30,7 +28,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Retornar para a lista de Eventos</a>
+    <a asp-action="Index">Retornar para a lista de comunidade gênero</a>
 </div>
 
 @section Scripts {

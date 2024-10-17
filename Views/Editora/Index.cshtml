@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Oraculo.Models.Editora>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Página de Editoras</h1>
+
+<p>
+    <a asp-action="Create" class="create">Criar nova editora</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EditoraFoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EditoraTexto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+               <img src="@Html.DisplayFor(modelItem => item.EditoraFoto)">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditoraTexto)
+            </td>
+            <td class="details">
+                    <a asp-action="Details" asp-route-id="@item.EditoraId"><i class="fa-solid fa-circle-info"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oraculo.Models;
 
@@ -11,9 +12,11 @@ using Oraculo.Models;
 namespace Oraculo.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20241011111019_Postagemimg-Inicial")]
+    partial class PostagemimgInicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,30 +77,6 @@ namespace Oraculo.Migrations
                     b.ToTable("Chat");
                 });
 
-            modelBuilder.Entity("Oraculo.Models.ComunidadeGenero", b =>
-                {
-                    b.Property<int>("ComunidadeGeneroId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ComunidadeGeneroId");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ComunidadeGeneroId"));
-
-                    b.Property<int>("ComunidadesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GeneroId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ComunidadeGeneroId");
-
-                    b.HasIndex("ComunidadesId");
-
-                    b.HasIndex("GeneroId");
-
-                    b.ToTable("ComunidadeGenero");
-                });
-
             modelBuilder.Entity("Oraculo.Models.Comunidades", b =>
                 {
                     b.Property<int>("ComunidadesId")
@@ -115,30 +94,6 @@ namespace Oraculo.Migrations
                     b.HasKey("ComunidadesId");
 
                     b.ToTable("Comunidades");
-                });
-
-            modelBuilder.Entity("Oraculo.Models.Editora", b =>
-                {
-                    b.Property<int>("EditoraId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("EditoraId");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EditoraId"));
-
-                    b.Property<string>("EditoraFoto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("EditoraFoto");
-
-                    b.Property<string>("EditoraTexto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("EditoraTexto");
-
-                    b.HasKey("EditoraId");
-
-                    b.ToTable("Editora");
                 });
 
             modelBuilder.Entity("Oraculo.Models.Evento", b =>
@@ -163,25 +118,6 @@ namespace Oraculo.Migrations
                     b.HasKey("EventoId");
 
                     b.ToTable("Evento");
-                });
-
-            modelBuilder.Entity("Oraculo.Models.Genero", b =>
-                {
-                    b.Property<int>("GeneroId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("GeneroId");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GeneroId"));
-
-                    b.Property<string>("GeneroNome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("GeneroNome");
-
-                    b.HasKey("GeneroId");
-
-                    b.ToTable("Genero");
                 });
 
             modelBuilder.Entity("Oraculo.Models.MaisComentados", b =>
@@ -329,25 +265,6 @@ namespace Oraculo.Migrations
                     b.Navigation("Categorias");
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("Oraculo.Models.ComunidadeGenero", b =>
-                {
-                    b.HasOne("Oraculo.Models.Comunidades", "Comunidades")
-                        .WithMany()
-                        .HasForeignKey("ComunidadesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Oraculo.Models.Genero", "Genero")
-                        .WithMany()
-                        .HasForeignKey("GeneroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Comunidades");
-
-                    b.Navigation("Genero");
                 });
 
             modelBuilder.Entity("Oraculo.Models.MaisComentados", b =>

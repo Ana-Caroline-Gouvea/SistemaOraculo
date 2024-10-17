@@ -11,8 +11,16 @@ namespace Oraculo.Models
         [Display(Name = "Id")]
         public int PostagemId { get; set; }
 
-        [ForeignKey("ComunidadeId")]
-        public int ComunidadeId { get; set; }
+        [Column("PostagemNome")]
+        [Display(Name = "Nome a Postagem")]
+        public string PostagemNome { get; set; } = string.Empty;
+
+        [Column("PostagemImg")]
+        [Display(Name = "Imagem da Postagem")]
+        public string PostagemImg { get; set; } = string.Empty;
+
+        [ForeignKey("ComunidadesId")]
+        public int ComunidadesId { get; set; }
         public Comunidades? Comunidades { get; set; }
 
         [ForeignKey("CategoriaId")]
@@ -26,11 +34,6 @@ namespace Oraculo.Models
         [Column("Compartilhamento")]
         [Display(Name = "Compartilhamento")]
         public int Compartilhamento { get; set; }
-
-
-
-
-
 
     }
 }

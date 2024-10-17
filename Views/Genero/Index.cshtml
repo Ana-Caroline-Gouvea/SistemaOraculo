@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Oraculo.Models.Genero>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Página de Gêneros</h1>
+
+<p>
+    <a asp-action="Create" class="create">Criar novo Gênero</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneroNome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneroNome)
+            </td>
+            <td class="details">
+                    <a asp-action="Details" asp-route-id="@item.GeneroId"><i class="fa-solid fa-circle-info"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
