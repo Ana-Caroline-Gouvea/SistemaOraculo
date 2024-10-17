@@ -21,7 +21,8 @@ namespace Oraculo.Controllers
         // GET: Postagem
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Postagem.Include(p => p.Categorias);
+            var contexto = _context.Postagem.Include(p => p.Categorias)
+                .Include(p => p.Comunidades);
             return View(await contexto.ToListAsync());
         }
 
@@ -47,7 +48,8 @@ namespace Oraculo.Controllers
         // GET: Postagem/Create
         public IActionResult Create()
         {
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId");
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome");
+            ViewData["ComunidadesId"] = new SelectList(_context.Comunidades, "ComunidadesId", "NomeComunidade");
             return View();
         }
 
@@ -56,7 +58,7 @@ namespace Oraculo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PostagemId,ComunidadeId,CategoriaId,Like,Compartilhamento")] Postagem postagem)
+        public async Task<IActionResult> Create([Bind("PostagemId,ComunidadesId,CategoriaId,Like,Compartilhamento,PostagemNome,PostagemImg")] Postagem postagem)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +66,8 @@ namespace Oraculo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId", postagem.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome", postagem.CategoriaId);
+            ViewData["ComunidadesId"] = new SelectList(_context.Comunidades, "ComunidadesId", "NomeComunidade");
             return View(postagem);
         }
 
@@ -81,7 +84,7 @@ namespace Oraculo.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId", postagem.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome", postagem.CategoriaId);
             return View(postagem);
         }
 
@@ -90,7 +93,7 @@ namespace Oraculo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostagemId,ComunidadeId,CategoriaId,Like,Compartilhamento")] Postagem postagem)
+        public async Task<IActionResult> Edit(int id, [Bind("PostagemId,ComunidadeId,CategoriaId,Like,Compartilhamento,PostagemNome,PostagemImg")] Postagem postagem)
         {
             if (id != postagem.PostagemId)
             {
@@ -117,7 +120,7 @@ namespace Oraculo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId", postagem.CategoriaId);
+            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaNome", postagem.CategoriaId);
             return View(postagem);
         }
 

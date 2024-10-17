@@ -4,16 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Página de Postagens</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="create">Criar nova postagem</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ComunidadeId)
+                @Html.DisplayNameFor(model => model.PostagemNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComunidadesId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Categorias)
@@ -31,10 +34,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ComunidadeId)
+                @Html.DisplayFor(modelItem => item.PostagemNome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Categorias.CategoriaId)
+                @Html.DisplayFor(modelItem => item.Comunidades.NomeComunidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorias.CategoriaNome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Like)
@@ -42,10 +48,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Compartilhamento)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PostagemId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PostagemId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PostagemId">Delete</a>
+            <td class="details">
+                <a asp-action="Details" asp-route-id="@item.PostagemId"><i class="fa-solid fa-circle-info"></i></a>
             </td>
         </tr>
 }

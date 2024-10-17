@@ -16,6 +16,10 @@ namespace Oraculo.Models
         public DbSet<Novidade> Novidade { get; set; }
         public DbSet<Postagem> Postagem { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Editora> Editora { get; set; }
+        public DbSet<Genero> Genero { get; set; }
+        public DbSet<ComunidadeGenero> ComunidadeGenero { get; set; }
+
 
     }
 }

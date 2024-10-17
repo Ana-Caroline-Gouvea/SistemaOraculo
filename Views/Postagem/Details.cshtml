@@ -4,23 +4,23 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalhes da Postagem</h1>
 
 <div>
     <h4>Postagem</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ComunidadeId)
+            @Html.DisplayNameFor(model => model.ComunidadesId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ComunidadeId)
+            @Html.DisplayFor(model => model.ComunidadesId)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Categorias)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categorias.CategoriaId)
+            @Html.DisplayFor(model => model.Categorias.CategoriaNome)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Like)
@@ -37,6 +37,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.PostagemId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retornar para a lista de Postagens</a>
 </div>

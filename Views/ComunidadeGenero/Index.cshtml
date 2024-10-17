@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Oraculo.Models.ComunidadeGenero>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Página de Comunidade Gênero</h1>
+
+<p>
+    <a asp-action="Create" class="create">Criar nova Comunidade Gênero</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comunidades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comunidades.NomeComunidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero.GeneroNome)
+            </td>
+            <td class="details">
+                    <a asp-action="Details" asp-route-id="@item.ComunidadeGeneroId"><i class="fa-solid fa-circle-info"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

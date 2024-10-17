@@ -18,5 +18,61 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #2d2f3b;
+}
+.header {
+    background-color: #22252d;
+}
+h1 {
+    color: #8224AE;
+}
+tr {
+    color: white;
+}
+.logo {
+    width: 200px;
+    height: 60px;
+}
+a {
+    color: #8224AE;
+    text-decoration:none;
+}
+td{
+    color: gray
+}
+.create {
+    padding: 8px;
+    border: 1px solid #8224AE;
+    margin-top: 20px;
+    border-radius: 3px
+}
+h1{
+    margin-bottom: 30px;
+}
+.details {
+    width: 10%;
+    text-align: center;
+}
+.row{
+    color: white
+}
+h4 {
+    color: white;
+}
+.form-control {
+    background-color: #494c60;
+    border: 1px solid #22252d;
+}
+.img-table{
+    width: 70px;
+    height: 70px;
+}
+hr{
+    color: white
+}
+.btn-primary {
+    background-color: #8224AE;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
