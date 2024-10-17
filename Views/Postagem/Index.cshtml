@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.PostagemNome)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.PostagemImg)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ComunidadesId)
             </th>
             <th>
@@ -35,6 +38,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PostagemNome)
+            </td>
+            <td>
+               <img class="img-table"  src="@Html.DisplayFor(modelItem => item.PostagemImg)">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comunidades.NomeComunidade)
