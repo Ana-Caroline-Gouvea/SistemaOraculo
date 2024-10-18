@@ -11,6 +11,13 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
+.bodyHome {
+    background-image: url("/img/logofundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 480px;
+}
 
 html {
   position: relative;
@@ -19,16 +26,19 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: #2d2f3b;
+    background-color: white;
 }
 .header {
-    background-color: #22252d;
+    background-color: white;
+    box-shadow: 10px 5px 5px #C0C0C0;
+    margin-top: 20px;
+    border-radius: 3px
 }
 h1 {
     color: #8224AE;
 }
 tr {
-    color: white;
+    color: black;
 }
 .logo {
     width: 200px;
@@ -55,21 +65,23 @@ h1{
     text-align: center;
 }
 .row{
-    color: white
+    color: black;
 }
 h4 {
-    color: white;
+    color: black;
 }
 .form-control {
-    background-color: #494c60;
-    border: 1px solid #22252d;
+    background-color: #DCDCDC;
+    border: 1px solid #8224AE;
+    margin-top: 20px;
+    border-radius: 3px
 }
 .img-table{
     width: 70px;
     height: 70px;
 }
 hr{
-    color: white
+    color: black
 }
 .btn-primary {
     background-color: #8224AE;
