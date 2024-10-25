@@ -57,8 +57,6 @@ namespace Oraculo.Controllers
             ViewData["UsuarioId"] = new SelectList(_context.Usuario, "UsuarioId", "UsuarioNome");
             return View();
         }
-
-
         // POST: Postagem/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
