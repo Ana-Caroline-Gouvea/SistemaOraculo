@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oraculo.Models;
 
@@ -11,9 +12,11 @@ using Oraculo.Models;
 namespace Oraculo.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20241025125519_UsuarioFoto")]
+    partial class UsuarioFoto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -260,16 +263,11 @@ namespace Oraculo.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PostagemNome");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("PostagemId");
 
                     b.HasIndex("CategoriaId");
 
                     b.HasIndex("ComunidadesId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Postagem");
                 });
@@ -385,17 +383,9 @@ namespace Oraculo.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Oraculo.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Categorias");
 
                     b.Navigation("Comunidades");
-
-                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }

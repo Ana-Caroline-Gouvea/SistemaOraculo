@@ -30,6 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Compartilhamento)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario.UsuarioNome)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -53,6 +56,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Compartilhamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.UsuarioNome)
             </td>
             <td class="details">
                 <a asp-action="Details" asp-route-id="@item.PostagemId"><i class="fa-solid fa-circle-info"></i></a>

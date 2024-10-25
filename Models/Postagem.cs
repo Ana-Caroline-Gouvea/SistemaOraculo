@@ -27,6 +27,10 @@ namespace Oraculo.Models
         public int CategoriaId { get; set; }
         public Categoria? Categorias { get; set; }
 
+        [ForeignKey("UsuarioId")]
+        public int UsuarioId { get; set; }
+        public Usuario? Usuario { get; set; }
+
         [Column("Like")]
         [Display(Name = "Like")]
         public int Like { get; set; }

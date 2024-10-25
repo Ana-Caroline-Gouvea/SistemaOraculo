@@ -55,7 +55,7 @@ namespace Oraculo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UsuarioId,UsuarioNome,UsuarioEmail,UsuarioApelido,DataNascimeto,UsuarioSenha,UsuarioConfirmarSenha")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("UsuarioId,UsuarioNome,UsuarioFoto,UsuarioEmail,UsuarioApelido,DataNascimeto,UsuarioSenha,UsuarioConfirmarSenha")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Oraculo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,UsuarioNome,UsuarioEmail,UsuarioApelido,DataNascimeto,UsuarioSenha,UsuarioConfirmarSenha")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,UsuarioNome,UsuarioFoto,UsuarioEmail,UsuarioApelido,DataNascimeto,UsuarioSenha,UsuarioConfirmarSenha")] Usuario usuario)
         {
             if (id != usuario.UsuarioId)
             {

@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.UsuarioNome)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.UsuarioFoto)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.UsuarioEmail)
             </th>
             <th>
@@ -38,6 +41,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioNome)
+            </td>
+            <td>
+                    <img src="@Html.DisplayFor(modelItem => item.UsuarioFoto)" width="90" height="90" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioEmail)

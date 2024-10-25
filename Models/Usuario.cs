@@ -13,6 +13,10 @@ namespace Oraculo.Models
         [Display(Name = "Nome do Usuário")]
         public string UsuarioNome { get; set; } = string.Empty;
 
+        [Column("UsuarioFoto")]
+        [Display(Name = "Foto do Usuário")]
+        public string UsuarioFoto { get; set; } = string.Empty;
+
         [Column("UsuarioEmail")]
         [Display(Name = "Email do Usuário")]
         public string UsuarioEmail { get; set; } = string.Empty;
