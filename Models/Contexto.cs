@@ -19,6 +19,7 @@ namespace Oraculo.Models
         public DbSet<Editora> Editora { get; set; }
         public DbSet<Genero> Genero { get; set; }
         public DbSet<ComunidadeGenero> ComunidadeGenero { get; set; }
+        public DbSet<ComunidadeUsuario> ComunidadeUsuario { get; set; }
 
 
     }
